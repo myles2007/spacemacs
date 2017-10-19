@@ -51,8 +51,11 @@
     (push 'company-tern company-backends-js2-mode)))
 
 (defun javascript/post-init-flycheck ()
+  (with-eval-after-load 'flycheck
   (dolist (mode '(coffee-mode js2-mode json-mode))
-    (spacemacs/add-flycheck-hook mode)))
+    (spacemacs/add-flycheck-hook mode))
+  (add-hook 'js2-mode-hook #'spacemacs//use-eslint-from-node-modules)
+  ))
 
 (defun javascript/post-init-ggtags ()
   (add-hook 'js2-mode-local-vars-hook #'spacemacs/ggtags-mode-enable))
