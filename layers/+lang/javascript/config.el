@@ -17,3 +17,6 @@
 
 (defvar javascript-disable-tern-port-files t
   "Stops tern from creating tern port files.")
+
+(defvar javascript-js2-mode-disable-warnings-and-errors nil
+  "Disables js2-mode warnings and errors.")

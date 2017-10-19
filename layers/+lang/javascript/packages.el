@@ -88,7 +88,9 @@
         "zr" 'js2-mode-show-all
         "ze" 'js2-mode-toggle-element
         "zF" 'js2-mode-toggle-hide-functions
-        "zC" 'js2-mode-toggle-hide-comments))))
+        "zC" 'js2-mode-toggle-hide-comments))
+    (when javascript-js2-mode-disable-warnings-and-errors
+      (js2-mode-toggle-warnings-and-errors))))
 
 (defun javascript/post-init-evil-matchit ()
   (add-hook `js2-mode `turn-on-evil-matchit-mode))
